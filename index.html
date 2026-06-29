@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>才干测评 - 发现你的核心优势</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo">才干测评</div>
+            <nav class="nav-links">
+                <a href="#" id="nav-home">首页</a>
+                <a href="#" id="nav-report">报告</a>
+                <a href="#" id="nav-about">关于</a>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <!-- 欢迎页 -->
+            <section id="welcome-view" class="view active">
+                <div class="hero">
+                    <h1>发现你的核心才干</h1>
+                    <p class="subtitle">通过 32 道情境题，识别你在 8 大才干维度中的优势分布，生成专属发展建议。</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">32</span>
+                            <span class="stat-label">测评题目</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">8</span>
+                            <span class="stat-label">才干维度</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">分钟完成</span>
+                        </div>
+                    </div>
+                    <button id="start-btn" class="btn btn-primary btn-large">开始测评</button>
+                </div>
+            </section>
+
+            <!-- 测评页 -->
+            <section id="quiz-view" class="view">
+                <div class="quiz-header">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <div class="quiz-meta">
+                        <span id="question-counter">第 1 / 32 题</span>
+                        <span id="theme-badge">执行力</span>
+                    </div>
+                </div>
+                <div class="question-card">
+                    <h2 id="question-text">题目加载中...</h2>
+                    <div class="options" id="options-container">
+                        <!-- 选项由 JS 生成 -->
+                    </div>
+                </div>
+                <div class="quiz-actions">
+                    <button id="prev-btn" class="btn btn-secondary" disabled>上一题</button>
+                    <button id="next-btn" class="btn btn-primary" disabled>下一题</button>
+                </div>
+            </section>
+
+            <!-- 结果页 -->
+            <section id="result-view" class="view">
+                <div class="result-header">
+                    <h1>你的才干报告</h1>
+                    <p id="result-subtitle">基于你的回答，以下是你的核心才干画像</p>
+                </div>
+                <div class="result-grid">
+                    <div class="result-card chart-card">
+                        <h3>才干雷达图</h3>
+                        <canvas id="radar-chart" width="400" height="320"></canvas>
+                    </div>
+                    <div class="result-card top-themes-card">
+                        <h3>TOP 5 核心才干</h3>
+                        <ol id="top-themes-list" class="top-themes-list">
+                            <!-- 由 JS 生成 -->
+                        </ol>
+                    </div>
+                </div>
+                <div class="result-card full-width">
+                    <h3>维度详解与发展建议</h3>
+                    <div id="theme-details" class="theme-details">
+                        <!-- 由 JS 生成 -->
+                    </div>
+                </div>
+                <div class="result-actions">
+                    <button id="restart-btn" class="btn btn-secondary">重新测评</button>
+                    <button id="download-btn" class="btn btn-primary">下载报告（文本）</button>
+                </div>
+            </section>
+
+            <!-- 关于页 -->
+            <section id="about-view" class="view">
+                <div class="about-card">
+                    <h2>关于本测评</h2>
+                    <p>本才干测评参考了积极心理学与优势发展理论，围绕青少年及职场新人常见的 8 大才干维度设计：</p>
+                    <ul>
+                        <li><strong>执行力</strong>：把想法变成结果的能力</li>
+                        <li><strong>影响力</strong>：带动他人、表达观点的能力</li>
+                        <li><strong>关系建立</strong>：建立信任、维护关系的能力</li>
+                        <li><strong>战略思维</strong>：看清方向、系统思考的能力</li>
+                        <li><strong>学习力</strong>：快速吸收新知、持续成长的能力</li>
+                        <li><strong>适应力</strong>：面对变化、灵活调整的能力</li>
+                        <li><strong>分析力</strong>：逻辑推理、拆解问题的能力</li>
+                        <li><strong>创造力</strong>：提出新点子、突破常规的能力</li>
+                    </ul>
+                    <p>测评结果仅供参考，才干是可以通过刻意练习持续发展的。</p>
+                    <button class="btn btn-primary about-back">返回首页</button>
+                </div>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <p>才干测评 · 仅供学习与发展参考</p>
+        </footer>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
