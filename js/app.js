@@ -117,6 +117,12 @@
         { value: 5, label: '非常符合' }
     ];
 
+    // 统计配置（基于 visitor-badge 全局计数徽章）
+    const BADGE_BASE = 'https://visitor-badge.laobi.icu/badge?page_id=';
+    const VISIT_PAGE_ID = 'bigjyzman-talent-assessment';
+    const COMPLETE_PAGE_ID = 'bigjyzman-talent-assessment-completion';
+    const COMPLETE_BADGE_URL = BADGE_BASE + COMPLETE_PAGE_ID + '&left_text=%E5%AE%8C%E6%88%90';
+
     // 状态
     let quizQuestions = [];
     let currentIndex = 0;
@@ -149,6 +155,25 @@
     // 初始化
     function init() {
         bindEvents();
+        recordVisit();
+    }
+
+    function recordVisit() {
+        // 访问计数由欢迎页徽章图片自动完成；这里仅做会话标记
+        if (!sessionStorage.getItem('ta_visit_recorded')) {
+            sessionStorage.setItem('ta_visit_recorded', '1');
+        }
+    }
+
+    function recordCompletion() {
+        const rankEl = document.getElementById('completion-rank');
+        if (!rankEl) return;
+        if (!sessionStorage.getItem('ta_completion_recorded')) {
+            sessionStorage.setItem('ta_completion_recorded', '1');
+            rankEl.innerHTML = '你是第 <img class="counter-badge" src="' + COMPLETE_BADGE_URL + '" alt="完成人数"> 位完成测评的人';
+        } else {
+            rankEl.textContent = '你已在本会话完成过测评';
+        }
     }
 
     function bindEvents() {
@@ -299,6 +324,7 @@
     }
 
     function showResults() {
+        recordCompletion();
         const results = calculateScores();
         renderTopThemes(results);
         renderThemeDetails(results);
