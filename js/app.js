@@ -121,7 +121,7 @@
     const BADGE_BASE = 'https://visitor-badge.laobi.icu/badge?page_id=';
     const VISIT_PAGE_ID = 'bigjyzman-talent-assessment';
     const COMPLETE_PAGE_ID = 'bigjyzman-talent-assessment-completion';
-    const COMPLETE_BADGE_URL = BADGE_BASE + COMPLETE_PAGE_ID + '&left_text=%E5%AE%8C%E6%88%90';
+    const COMPLETE_BADGE_URL = BADGE_BASE + COMPLETE_PAGE_ID + '&left_text=completed';
 
     // 状态
     let quizQuestions = [];
