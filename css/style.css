@@ -133,6 +133,35 @@ body {
     margin-top: 8px;
 }
 
+.counter-box {
+    background: var(--primary-light);
+    color: var(--primary-dark);
+    padding: 14px 24px;
+    border-radius: 10px;
+    margin-bottom: 32px;
+    font-size: 1rem;
+    display: inline-block;
+}
+
+.counter-box strong {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 0 4px;
+}
+
+.counter-badge {
+    height: 1.2em;
+    vertical-align: middle;
+    margin: 0 4px;
+    display: inline-block;
+}
+
+.completion-rank {
+    color: var(--primary-dark);
+    font-weight: 600;
+    margin-top: 8px;
+}
+
 .btn {
     display: inline-flex;
     align-items: center;
